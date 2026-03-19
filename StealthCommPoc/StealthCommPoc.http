@@ -1,0 +1,6 @@
+@StealthCommPoc_HostAddress = http://localhost:5167
+
+GET {{StealthCommPoc_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
