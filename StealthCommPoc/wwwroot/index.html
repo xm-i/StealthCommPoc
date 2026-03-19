@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:,">
+    <title>ステルスファイルアップロード PoC</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 720px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        #drop-zone {
+            border: 2px dashed #888;
+            border-radius: 10px;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            #drop-zone.drag-over {
+                background: #f3f6ff;
+                border-color: #3b82f6;
+            }
+
+        #file-input {
+            display: none;
+        }
+
+        .note {
+            margin-top: 1rem;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        #results {
+            margin-top: 1rem;
+            display: grid;
+            gap: 12px;
+        }
+
+        .item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+            .item img {
+                max-width: 100%;
+                max-height: 220px;
+                margin-bottom: 6px;
+                display: block;
+            }
+
+            .item button {
+                margin-bottom: 6px;
+                display: block;
+            }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ステルスファイルアップロード PoC</h1>
+    <p>画像をサーバーにアップロードします（10MBまで）。</p>
+    <p>DevToolsのNetworkタブには表示されません。</p>
+    <p>最低限3月いっぱいくらいは公開しておきます。CC0で好きに使ってもらっていいです。</p>
+
+    <div id="drop-zone">画像をドラッグ＆ドロップ（またはクリックして選択）</div>
+    <input type="file" id="file-input" accept="image/*" multiple />
+
+    <div id="results"></div>
+    <script src="js/app.js"></script>
+</body>
+</html>
